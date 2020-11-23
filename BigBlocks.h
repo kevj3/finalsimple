@@ -27,7 +27,7 @@ public:
 
 	void move();
 	void create();
-	void collide(Astro loc);
-	void collideA(Attack loc);
+	void collide(Astro loc,ofSoundPlayer pain);
+	void collideA(Attack loc,ofSoundPlayer exp);
 };
 

@@ -29,5 +29,7 @@ private:
 	ofImage astronaut;
 	ofSoundPlayer space;
 	ofSoundPlayer gun;
+	ofSoundPlayer exp;
+	ofSoundPlayer pain;
 
 };

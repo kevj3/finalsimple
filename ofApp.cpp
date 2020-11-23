@@ -32,6 +32,8 @@ void ofApp::setup(){
 
 	astronaut.load("astro.png");
 	gun.load("laser.mp3");
+	exp.load("exp.mp3");
+	pain.load("Pain.mp3");
 }
 
 //--------------------------------------------------------------
@@ -124,7 +126,7 @@ void ofApp::update(){
 	for (int i = 0; i < blocks.size(); i++) {
 		blocks[i]->follow(astro);
 		blocks[i]->move();
-		blocks[i]->collide(astro);
+		blocks[i]->collide(astro,pain);
 		blocks[i]->collideA(attack);
 	}
 
@@ -138,8 +140,8 @@ void ofApp::update(){
 			bblocks[i]->dy = 11;
 			bblocks[i]->move();
 		}
-		bblocks[i]->collide(astro);
-		bblocks[i]->collideA(attack);
+		bblocks[i]->collide(astro,pain);
+		bblocks[i]->collideA(attack,exp);
 	}
 
 }

@@ -27,7 +27,7 @@ void Blocks::move() {
 	y += dy;
 }
 
-void Blocks::collide(Astro loc) {
+void Blocks::collide(Astro loc,ofSoundPlayer pain) {
 	//bottom y of block above other top
 	if ((y + height) < loc.y) {
 		return;
@@ -51,6 +51,7 @@ void Blocks::collide(Astro loc) {
 	y = -50;
 	dx++;
 	dy++;
+	pain.play();
 }
 
 void Blocks::collideA(Attack attack) {

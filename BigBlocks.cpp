@@ -9,7 +9,7 @@ void BigBlocks::move() {
 	y += dy;
 }
 
-void BigBlocks::collide(Astro loc) {
+void BigBlocks::collide(Astro loc,ofSoundPlayer pain) {
 	//bottom y of block above other top
 	if ((y + height) < loc.y) {
 		return;
@@ -31,9 +31,10 @@ void BigBlocks::collide(Astro loc) {
 	cout << "hit" << endl;
 	x = ofRandom(0, ofGetWidth());
 	y = -50;
+	pain.play();
 }
 
-void BigBlocks::collideA(Attack attack) {
+void BigBlocks::collideA(Attack attack,ofSoundPlayer exp) {
 	//bottom y of block above other top
 	if ((y + height) < attack.y) {
 		return;
@@ -55,4 +56,5 @@ void BigBlocks::collideA(Attack attack) {
 	cout << "hit from attack" << endl;
 	x = ofRandom(0, ofGetWidth());
 	y = -50;
+	exp.play();
 }
