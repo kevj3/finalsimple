@@ -1,5 +1,6 @@
 #pragma once
 #include "ofMain.h"
+
 class Astro
 {
 public:
@@ -13,6 +14,8 @@ public:
 		int height;
 		int health;
 	}
+	int health = 10;
+	int score = 0;
 
 	int x = 500;
 	int y = 500;
@@ -26,8 +29,8 @@ public:
 	
 
 	void create(ofImage img);
-
 	void Move();
+	void scores();
 
 	void MoveUp();
 	void MoveRight();

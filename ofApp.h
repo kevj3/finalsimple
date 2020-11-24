@@ -16,20 +16,23 @@ public:
 	void draw();
 	void keyPressed(int key);
 
-
+	int level = 1;
 	Astro astro;
 	Blocks block;
+	BigBlocks bblock;
 	Attack attack;
 	Bars bars;
 	vector<Blocks*> blocks;
 	vector<BigBlocks*> bblocks;
+
 private:
 	ofSerial serial;
-	ofImage meteor;
 	ofImage astronaut;
 	ofSoundPlayer space;
 	ofSoundPlayer gun;
 	ofSoundPlayer exp;
 	ofSoundPlayer pain;
+	ofSoundPlayer blop;
+	ofImage gg;
 
 };

@@ -8,6 +8,14 @@ void Astro::create(ofImage img) {
 void Astro::Move() {
 	x += dx;
 	y += dy;
+	
+	if (x >= ofGetWidth() || x <= 0) {
+		dx = dx * -1;
+	}
+
+	if (y >= ofGetHeight() || y <= 0) {
+		dy = dy * -1;
+	}
 }
 
 void Astro::MoveUp() {
@@ -47,4 +55,14 @@ void Astro::MoveDownRight() {
 void Astro::Stop() {
 	dx = 0;
 	dy = 0;
+}
+
+void Astro::scores() {
+	ofSetColor(255);
+	ofDrawBitmapString("Health:", 100, 600);
+	ofDrawBitmapString(health, 170, 600);
+
+	ofDrawBitmapString("Score: ", 300, 600);
+	ofDrawBitmapString(score, 370, 600);
+
 }

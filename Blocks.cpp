@@ -27,7 +27,13 @@ void Blocks::move() {
 	y += dy;
 }
 
-void Blocks::collide(Astro loc,ofSoundPlayer pain) {
+void Blocks::stop(){
+	dx = 0;
+	dy = 0;
+}
+
+
+void Blocks::collide(Astro &loc,ofSoundPlayer pain) {
 	//bottom y of block above other top
 	if ((y + height) < loc.y) {
 		return;
@@ -45,8 +51,9 @@ void Blocks::collide(Astro loc,ofSoundPlayer pain) {
 	if (x > (loc.x + loc.width)) {
 		return;
 	}
+	
+	loc.health = loc.health - 1;
 
-	cout << "hit" << endl;
 	x = ofRandom(0, ofGetWidth());
 	y = -50;
 	dx++;
@@ -54,7 +61,7 @@ void Blocks::collide(Astro loc,ofSoundPlayer pain) {
 	pain.play();
 }
 
-void Blocks::collideA(Attack attack) {
+void Blocks::collideA(Attack attack, ofSoundPlayer blop,Astro &a) {
 	//bottom y of block above other top
 	if ((y + height) < attack.y) {
 		return;
@@ -73,7 +80,9 @@ void Blocks::collideA(Attack attack) {
 		return;
 	}
 
+	a.score = a.score + 5;
 	cout << "hit from attack" << endl;
 	x = ofRandom(0, ofGetWidth());
 	y = -50;
+	blop.play();
 }
