@@ -63,6 +63,6 @@ void Astro::scores() {
 	ofDrawBitmapString(health, 170, 600);
 
 	ofDrawBitmapString("Score: ", 300, 600);
-	ofDrawBitmapString(score, 370, 600);
+	ofDrawBitmapString(allscore, 370, 600);
 
 }

@@ -7,7 +7,7 @@ public:
 
 	bool bTimerReached = false;
 	float startTime = ofGetElapsedTimeMillis();  // get the start time
-	float endTime = (300000); // in milliseconds
+	float endTime = (30000); // in milliseconds
 
 	void timer();
 

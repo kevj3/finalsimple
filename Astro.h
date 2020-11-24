@@ -16,7 +16,7 @@ public:
 	}
 	int health = 10;
 	int score = 0;
-
+	int allscore = 0;
 	int x = 500;
 	int y = 500;
 

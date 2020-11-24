@@ -26,7 +26,7 @@ public:
 
 
 	void move();
-	void stop();
+	void reset();
 	void create();
 	void collide(Astro &loc,ofSoundPlayer pain);
 	void collideA(Attack loc,ofSoundPlayer exp,Astro &a);

@@ -8,8 +8,9 @@ void BigBlocks::move() {
 	y += dy;
 }
 
-void BigBlocks::stop() {
-	dy = 0;
+void BigBlocks::reset() {
+	y = ofRandom(-15, -65);
+	x = ofRandom(0, ofGetWidth());
 }
 
 void BigBlocks::collide(Astro &loc,ofSoundPlayer pain) {
@@ -57,7 +58,7 @@ void BigBlocks::collideA(Attack attack,ofSoundPlayer exp,Astro &a) {
 	}
 
 	a.score = a.score + 20;
-	cout << "hit from attack" << endl;
+	a.allscore = a.allscore + 20;
 	x = ofRandom(0, ofGetWidth());
 	y = -50;
 	exp.play();

@@ -15,12 +15,12 @@ void Bars::timer() {
 
     // the background to the progress bar
     ofSetColor(255);
-    ofDrawRectangle((ofGetWidth() - barWidth) / 2, 100, barWidth, 30);
+    ofDrawRectangle((ofGetWidth() - barWidth) / 2, 120, barWidth, 30);
 
     // get the percentage of the timer
     float pct = ofMap(timer, 0.0, endTime, 0.0, 1.0, true);
     ofSetHexColor(0xf02589);
-    ofDrawRectangle((ofGetWidth() - barWidth) / 2, 100, barWidth * pct, 30);
+    ofDrawRectangle((ofGetWidth() - barWidth) / 2, 120, barWidth * pct, 30);
 
     // draw the percentage
     ofSetColor(255);
@@ -29,7 +29,7 @@ void Bars::timer() {
     // the timer was reached :)
     if (bTimerReached) {
         ofSetColor(255);
-        ofDrawBitmapString("Timer Reached!", (ofGetWidth() - 100) / 2, 100 + 70);
+        ofDrawBitmapString("Timer Reached!", (ofGetWidth() - 120) / 2, 120 + 70);
     }
 
     // some information about the timer

@@ -27,9 +27,9 @@ void Blocks::move() {
 	y += dy;
 }
 
-void Blocks::stop(){
-	dx = 0;
-	dy = 0;
+void Blocks::reset(){
+	y = ofRandom(-15, -65);
+	x = ofRandom(0, ofGetWidth());
 }
 
 
@@ -81,7 +81,7 @@ void Blocks::collideA(Attack attack, ofSoundPlayer blop,Astro &a) {
 	}
 
 	a.score = a.score + 5;
-	cout << "hit from attack" << endl;
+	a.allscore = a.allscore + 5;
 	x = ofRandom(0, ofGetWidth());
 	y = -50;
 	blop.play();
